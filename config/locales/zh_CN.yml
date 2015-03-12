@@ -28,6 +28,8 @@ zh-CN:
       notice: '更新成功.'
     destroy:
       notice: '删除成功.'
+    like:
+      notice: '成功喜欢'
   story:
     create: '也来个段子'
     edit: '润饰'
