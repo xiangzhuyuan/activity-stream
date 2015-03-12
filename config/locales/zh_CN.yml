@@ -1,0 +1,40 @@
+zh-CN:
+  activity:
+    story:
+      create: '添加了'
+      destroy: '干掉了'
+      update: '编辑了'
+      like: '喜欢了'
+    destroy: '一个段子'
+
+
+  helpers:
+    label:
+      story:
+        title: '标题'
+        body: '内容'
+    submit:
+      create: '添加'
+      update: '更新'
+
+      story:
+        create: '添加'
+        update: '更新'
+        delete: '删除'
+  stories:
+    create:
+      notice: '添加成功了.'
+    update:
+      notice: '更新成功.'
+    destroy:
+      notice: '删除成功.'
+  story:
+    create: '也来个段子'
+    edit: '润饰'
+    destroy: '删除'
+    sure: '确定?'
+    likes: '个喜欢'
+    like: '也喜欢?'
+  title: '段子大全'
+  slogan: '我们爱段子'
+  login_fb: '用 facebook 登录'

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>段子</title>
+  <title><%= t('title')%></title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,14 +11,14 @@
 <div class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <%= link_to '讲段子', root_path, class: 'navbar-brand' %>
+      <%= link_to t('title'), root_path, class: 'navbar-brand' %>
     </div>
     <ul class="nav navbar-nav pull-right">
       <% if current_user %>
           <li><span><%= image_tag current_user.avatar_url, alt: current_user.name %></span></li>
           <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
       <% else %>
-          <li><%= link_to '用 facebook 登录', '/auth/facebook' %></li>
+          <li><%= link_to t('login_fb'), '/auth/facebook' %></li>
       <% end %>
     </ul>
   </div>

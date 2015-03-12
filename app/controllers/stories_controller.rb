@@ -14,8 +14,8 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
     if @story.save
-      flash[:success] = 'Your story was added!'
-      redirect_to root_path
+      # flash[:success] = 'Your story was added!'
+      redirect_to root_path, notice: t('.notice')
     else
       render 'new'
     end
@@ -26,8 +26,8 @@ class StoriesController < ApplicationController
 
   def update
     if @story.update_attributes(story_params)
-      flash[:success] = 'The story was edited!'
-      redirect_to root_path
+      # flash[:success] = 'The story was edited!'
+      redirect_to root_path, notice: t('.notice')
     else
       render 'edit'
     end
@@ -35,11 +35,11 @@ class StoriesController < ApplicationController
 
   def destroy
     if @story.destroy
-      flash[:success] = 'The story was deleted!'
+      # flash[:success] = 'The story was deleted!'
     else
-      flash[:error] = 'Cannot delete this story...'
+      # flash[:error] = 'Cannot delete this story...'
     end
-    redirect_to root_path
+    redirect_to root_path, notice: t('.notice')
   end
 
   def show
@@ -50,8 +50,8 @@ class StoriesController < ApplicationController
       @story.increment!(:likes)
     end
     @story.create_activity :like
-    flash[:success] = 'Thanks for sharing your opinion!'
-    redirect_to story_path(@story)
+    # flash[:success] = 'Thanks for sharing your opinion!'
+    redirect_to story_path(@story), notice: t('.notice')
   end
 
   private

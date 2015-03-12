@@ -1,6 +1,6 @@
-<% page_header "我们爱段子" %>
+<% page_header t('slogan') %>
 
-<p><%= link_to '来一个!', new_story_path, class: 'btn btn-primary btn-large' %></p>
+<p><%= link_to t('story.create'), new_story_path, class: 'btn btn-primary btn-large' %></p>
 
 <% @stories.each do |story| %>
     <div class="well well-lg">
@@ -9,8 +9,8 @@
       <p><%= truncate(story.body, length: 350) %></p>
 
       <div class="btn-group">
-        <%= link_to '编辑', edit_story_path(story), class: 'btn btn-info' %>
-        <%= link_to '删除', story_path(story), data: {confirm: '确定?'}, method: :delete, class: 'btn btn-danger' %>
+        <%= link_to t('story.edit'), edit_story_path(story), class: 'btn btn-info' %>
+        <%= link_to t('story.destroy'), story_path(story), data: {confirm: t('story.sure')}, method: :delete, class: 'btn btn-danger' %>
       </div>
     </div>
 <% end %>

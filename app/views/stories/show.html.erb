@@ -1,14 +1,14 @@
 <% page_header @story.title %>
 
 <p>
-  <span class="label label-default"><%= pluralize(@story.likes, 'like') %></span>
-  <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-thumbs-up') + ' 喜欢?',
+  <span class="label label-default"><%= pluralize(@story.likes, t('story.likes')) %></span>
+  <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-thumbs-up') +  t('like'),
               like_story_path(@story), class: 'btn btn-default btn-sm', method: :post %>
 </p>
 
 <p><%= @story.body %></p>
 
 <div class="btn-group">
-  <%= link_to '编辑', edit_story_path(@story), class: 'btn btn-info' %>
-  <%= link_to '删除', story_path(@story), data: {confirm: '确定?'}, method: :delete, class: 'btn btn-danger' %>
+  <%= link_to t('story.create'), edit_story_path(story), class: 'btn btn-info' %>
+  <%= link_to t('story.destroy'), story_path(story), data: {confirm: t('story.sure')}, method: :delete, class: 'btn btn-danger' %>
 </div>

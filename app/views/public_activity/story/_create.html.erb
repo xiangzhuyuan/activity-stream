@@ -1,10 +1,11 @@
 <li class="list-group-item">
   <span class="glyphicon glyphicon-plus"></span>
-  <small class="text-muted"><%= a.created_at.strftime('%H:%M:%S %-d %B %Y') %></small><br/>
-  <strong><%= activity.owner ? activity.owner.name : 'Guest' %></strong>
+  <small class="text-muted"><%= a.created_at.strftime('%H:%M:%S %-d %B %Y') %></small>
+  <br/>
+  <strong><%= activity.owner ? activity.owner.name : get_guest_name %></strong>
   <% if a.trackable %>
-      新加了个段子 <%= link_to a.trackable.title, story_path(a.trackable) %>.
+      <%= t('activity.story.create') %> <%= link_to a.trackable.title, story_path(a.trackable) %>.
   <% else %>
-     这个段子已经删除了
+      <%= t('activity.story.destroy') %>
   <% end %>
 </li>
