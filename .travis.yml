@@ -12,7 +12,9 @@ before_script:
   - sudo apt-get install language-pack-es
   - sudo /etc/init.d/postgresql stop
   - sudo /etc/init.d/postgresql start 9.3
-  - psql -c 'create database p-test;' -U postgres
+  - psql -c 'create database p_dev;' -U postgres
+  - psql -c 'create database p_test;' -U postgres
+  - psql -c 'create database p_pro;' -U postgres
   - cp config/database.yml.travis config/database.yml
 
 
