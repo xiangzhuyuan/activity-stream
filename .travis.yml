@@ -26,5 +26,4 @@ script:
 gemfile:
   Gemfile
 
-sudo: false
 cache: bunlder
