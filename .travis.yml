@@ -17,6 +17,10 @@ before_script:
   - psql -c 'create database p_pro;' -U postgres
   - cp config/database.yml.travis config/database.yml
 
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
 
 gemfile:
   Gemfile
