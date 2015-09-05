@@ -25,5 +25,3 @@ script:
 
 gemfile:
   Gemfile
-
-cache: bunlder
